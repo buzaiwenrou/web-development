@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Histogram Generator</title>
+    <link rel="stylesheet" href="histogram.css">
+    <script src="calculate.js"></script>
+</head>
+<body onload="init()">
+    <div id="container">
+        <h1>Histogram Generator</h1>
+        <input id="fileInput" type="file" name="file" />
+        <div id="mainPanel">
+            <div id="left">
+                <div id="lowerBounds">
+                    <h3>Lower bounds</h3>
+                    <label>Max</label>
+                    <input type="number" name="max" id="maxInput" step="0.01" value="100.00" pattern="\d+(\.\d{1,2})?" readonly>
+                    <br>
+                    <label style="padding-right: 9px">A+</label>
+                    <input id="grade1" type="number" name="gradeAplus" step="0.01" value="95.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 20px">A</label>
+                    <input id="grade2" type="number" name="gradeA" step="0.01" value="90.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 14px">A-</label>
+                    <input id="grade3" type="number" name="gradeAminus" step="0.01" value="85.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 10px">B+</label>
+                    <input id="grade4" type="number" name="gradeBplus" step="0.01" value="80.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 21px">B</label>
+                    <input id="grade5" type="number" name="gradeB" step="0.01" value="75.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 15px">B-</label>
+                    <input id="grade6" type="number" name="gradeBminus" step="0.01" value="70.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 10px">C+</label>
+                    <input id="grade7" type="number" name="gradeCplus" step="0.01" value="65.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 21px">C</label>
+                    <input id="grade8" type="number" name="gradeC" step="0.01" value="60.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 14px">C-</label>
+                    <input id="grade9" type="number" name="gradeCminus" step="0.01" value="55.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 19px">D</label>
+                    <input id="grade10" type="number" name="gradeD" step="0.01" value="50.00" pattern="\d+(\.\d{1,2})?">
+                    <br>
+                    <label style="padding-right: 23px">F</label>
+                    <input type="number" name="gradeF" step="0.01" value="0.00" pattern="\d+(\.\d{1,2})?" readonly>
+                </div>
+            </div>
+            <div id="right">
+                <div id="histogram">
+                    <h3>Histogram</h3>
+                    <table>
+                    <tr><td>Max</td><td id="nameList0"></td></tr>
+                    <tr><td>A+</td>
+                    <td id="nameList1"></td>
+                    </tr><tr>
+                    <td>A</td>
+                    <td id="nameList2"></td>
+                </tr><tr>
+                    <td>A-</td>
+                    <td id="nameList3"></td>
+                </tr><tr>
+                    <td>B+</td>
+                    <td id="nameList4"></td>
+                </tr><tr>
+                    <td>B</td>
+                    <td id="nameList5"></td>
+                </tr><tr>
+                    <td>B-</td>
+                    <td id="nameList6"></td>
+                </tr><tr>
+                    <td>C+</td>
+                    <td id="nameList7"></td>
+                </tr><tr>
+                    <td>C</td>
+                    <td id="nameList8"></td>
+                </tr><tr>
+                    <td>C-</td>
+                    <td id="nameList9"></td>
+                </tr><tr>
+                    <td>D</td>
+                    <td id="nameList10"></td>
+                </tr><tr>
+                    <td>F</td>
+                    <td id="nameList11"></td>
+                </tr>
+                    </table>
+                </div>
+
+                <div id="stats">
+                    <h3>Stats</h3>
+                    <table>
+                        <tr><td>Highest</td>
+                            <td id="stats0"></td>
+                        </tr>
+                        <tr><td>Lowest</td>
+                            <td id="stats1"></td>
+                        </tr><tr>
+                        <td>Mean</td>
+                        <td id="stats2"></td>
+                    </tr><tr>
+                        <td>Median</td>
+                        <td id="stats3"></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
